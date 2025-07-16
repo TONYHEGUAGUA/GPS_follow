@@ -202,7 +202,7 @@ class DroneFollowGUI:
                     self.takeoff_btn.config(state=tk.NORMAL)
                 self.root.after(0, on_success)
             except Exception as e:
-                def on_fail():
+                def on_fail(e=e):
                     self.log(f"连接无人机失败: {e}")
                     self.vehicle = None
                     self.vehicle_connected = False
